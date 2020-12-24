@@ -1,6 +1,6 @@
 body {
 	background-color: rgb(132, 170, 241);
-	background-image: url(https://images.unsplash.com/photo-1607426740187-d8b1650d58f3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1370&q=80);
+	background-image: url(https://images.unsplash.com/photo-1607426740187-d8b1650d58f3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
 	background-size: contain;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -21,14 +21,12 @@ h1 {
 	font-family: 'Indie Flower', cursive;
 	text-align: center;
 	font-size: 40px;
-	/* color: #603f83; */
 	color: rgb(113, 117, 129);
 }
 
 #board td {
-	width: 60px;
-	height: 60px;
-	border: solid 2px whitesmoke;
+	width: 85px;
+	height: 85px;
 	border-radius: 5%;
 	margin-left: auto;
 	margin-right: auto;
@@ -44,8 +42,8 @@ h1 {
 .piece {
 	/* TODO: make into circles */
 	margin: 5px;
-	width: 85%;
-	height: 85%;
+	width: 75%;
+	height: 75%;
 	border-radius: 50%;
 }
 
@@ -73,9 +71,10 @@ h1 {
 
 /* column-top is table row of clickable areas for each column */
 #column-top td {
-	border: dashed 1px lightgray;
+	border-top: solid 0.1px rgb(199 203 214);
+	border-radius: inherit;
 }
 
 #column-top td:hover {
-	background-color: whitesmoke;
+	opacity: 0.1;
 }
