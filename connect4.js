@@ -15,43 +15,43 @@ const board = []; // array of rows, each row is array of cells  (board[y][x])
  *    board = array of rows, each row is array of cells  (board[y][x])*/
 
 function makeBoard() {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+    // TODO: set "board" to empty HEIGHT x WIDTH matrix array
     for (let y = 0; y < HEIGHT; y++) {
-      board.push(Array.from({ length: WIDTH }));
+        board.push(Array.from({ length: WIDTH }));
     }
-  }
+}
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
-   // get "htmlBoard" variable from the item in HTML w/ID of "board"
-   // switch from getElement by Id to querySelector 
-  let htmlBoard = document.querySelector('#board');
-  // center the board here, better than css
-  htmlBoard.setAttribute("class", "center");
-  
-  let top = document.createElement("tr");
-  top.setAttribute("id", "column-top");
-  top.addEventListener("click", handleClick);
-  //the above code is adding a click event for when the user is choosing which column to put their playing piece.
-  
-  for (let x = 0; x < WIDTH; x++) {
-    let headCell = document.createElement("td");
-    headCell.setAttribute("id", x);
-    top.append(headCell);
-  }
-  htmlBoard.append(top);
-//the above code is creating the cells in the top clickable row of the game board
-  
-for (let y = 0; y < HEIGHT; y++) {
-    const row = document.createElement("tr");
+    // get "htmlBoard" variable from the item in HTML w/ID of "board"
+    // switch from getElement by Id to querySelector 
+    let htmlBoard = document.querySelector('#board');
+    // center the board here, better than css
+    htmlBoard.setAttribute("class", "center");
+
+    let top = document.createElement("tr");
+    top.setAttribute("id", "column-top");
+    top.addEventListener("click", handleClick);
+    //the above code is adding a click event for when the user is choosing which column to put their playing piece.
+
     for (let x = 0; x < WIDTH; x++) {
-      const cell = document.createElement("td");
-      cell.setAttribute("id", `${y}-${x}`);
-      row.append(cell);
+        let headCell = document.createElement("td");
+        headCell.setAttribute("id", x);
+        top.append(headCell);
     }
-    htmlBoard.append(row);
-  }
+    htmlBoard.append(top);
+    //the above code is creating the cells in the top clickable row of the game board
+
+    for (let y = 0; y < HEIGHT; y++) {
+        const row = document.createElement("tr");
+        for (let x = 0; x < WIDTH; x++) {
+            const cell = document.createElement("td");
+            cell.setAttribute("id", `${y}-${x}`);
+            row.append(cell);
+        }
+        htmlBoard.append(row);
+    }
 }
 //the above code is creating the remainder of the game board beneath the top row
 
@@ -127,11 +127,11 @@ function checkForWin() {
 
         return cells.every(
             ([y, x]) =>
-            y >= 0 &&
-            y < HEIGHT &&
-            x >= 0 &&
-            x < WIDTH &&
-            board[y][x] === currPlayer
+                y >= 0 &&
+                y < HEIGHT &&
+                x >= 0 &&
+                x < WIDTH &&
+                board[y][x] === currPlayer
         );
     }
 
@@ -241,3 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.head.append(script);
 });
+
+
+

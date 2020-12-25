@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(132, 170, 241);
+	/* background-color: rgb(132, 170, 241); */
 	background-image: url(https://images.unsplash.com/photo-1607426740187-d8b1650d58f3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
 	background-size: contain;
 	background-size: cover;
@@ -77,4 +77,21 @@ h1 {
 
 #column-top td:hover {
 	opacity: 0.1;
+}
+
+body {
+	width: 90%;
+	margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+	body {
+		width: 80%;
+	}
+}
+
+@media (min-width: 1000px) {
+	body {
+		width: 50%;
+	}
 }
